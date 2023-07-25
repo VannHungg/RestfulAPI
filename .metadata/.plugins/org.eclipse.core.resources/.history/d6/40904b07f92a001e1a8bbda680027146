@@ -1,0 +1,24 @@
+package com.giaolang.bookstore.test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.giaolang.bookstore.dto.Book;
+import com.giaolang.bookstore.util.DBUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = DBUtil();
+		if(sessionFactory != null) {
+			Session session = sessionFactory.openSession();
+			Transaction tr = session.beginTransaction();
+			
+			Book book = new Book("111", "111", "CVV", 10, 2010);
+			session.save(book);
+			
+			tr.commit();
+			session.close();
+		}
+	}
+}

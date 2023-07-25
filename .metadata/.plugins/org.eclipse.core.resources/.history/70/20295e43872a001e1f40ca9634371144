@@ -1,0 +1,6 @@
+package com.giaolang.bookstore.config;
+
+
+public class BookApplication {
+	main
+}

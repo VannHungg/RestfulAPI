@@ -1,0 +1,24 @@
+package com.giaolang.bookstore.dto;
+
+import java.io.Serializable;
+
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+//Interface Serializable để báo hiệu cho máy ảo biết là ...
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Book implements Serializable{
+	private String isbn;
+	private String title;
+	private String author;
+	private int edition; //số lần xuất bản
+	private int publicshedYear;
+}

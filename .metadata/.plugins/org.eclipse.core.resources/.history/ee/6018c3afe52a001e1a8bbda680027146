@@ -1,0 +1,46 @@
+package test;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+
+import model.CuocHop;
+import model.Book;
+import model.NhanVien;
+import util.HibernateUtil;
+
+public class TestStateOfObject {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionfactory();
+		if(sessionFactory != null) {
+			Session session = sessionFactory.openSession();
+			Transaction tr = session.beginTransaction();
+			
+			NhanVien nv1 = new NhanVien("1", "vvhung", new Date(2001+1990, 10, 10));
+//			session.save(nv1);
+			
+			CuocHop ch1 = new CuocHop();
+			ch1.setTenCuocHop("abc");
+			ch1.setThoiGian(new Date(2001+1990, 10, 10));
+			ch1.setDiaDiem("hcm");
+			ch1.themNhanVien(nv1);
+			
+			nv1.addCuocHop(ch1);
+			
+			session.save(ch1);
+			
+//			Book book = new Book("111", "111", "CVV", 10, 2010);
+//			session.save(book);
+			
+			tr.commit();
+			session.close();
+		}
+	}
+}

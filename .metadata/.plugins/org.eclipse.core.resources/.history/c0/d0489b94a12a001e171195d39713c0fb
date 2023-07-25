@@ -1,0 +1,22 @@
+package com.giaolang.bookstore.resource.v2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.giaolang.bookstore.dto.Book;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+
+@Path("v2/books")
+public class BookResource {
+	private List<Book> books = new ArrayList<>();
+	
+	@GET
+	@Produces("")
+	public BookResource {
+		
+		return books;
+	}
+}

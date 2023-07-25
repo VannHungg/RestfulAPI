@@ -1,0 +1,12 @@
+package com.giaolang.bookstore.config;
+
+import org.glassfish.jersey.server.ResourceConfig;
+
+import jakarta.ws.rs.ApplicationPath;
+
+//xài web app: localhost:8080/bookstore
+//xài web api: localhost:8080/bookstore.api
+@ApplicationPath("api")
+public class BookApplication extends ResourceConfig{
+	
+}

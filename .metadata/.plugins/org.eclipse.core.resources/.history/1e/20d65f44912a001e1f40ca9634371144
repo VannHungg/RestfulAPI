@@ -1,0 +1,18 @@
+package com.giaolang.bookstore.resource.v1;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("v1/books")
+public class BookResource {
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sayHello() {
+		return "One small meassage return from api!!";
+	}
+	
+	@GET
+	http://localhost:8080/bookstore/api/v1/books
+}

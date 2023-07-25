@@ -1,0 +1,25 @@
+package com.giaolang.bookstore.dto;
+
+import java.io.Serializable;
+
+//Interface Serializable để báo hiệu cho máy ảo biết là 
+public class Book implements Serializable{
+	private String isbn;
+	private String title;
+	private String author;
+	private int edition; //số lần xuất bản
+	private int publicshedYear;
+	public Book() {
+		super();
+	}
+	public Book(String isbn, String title, String author, int edition, int publicshedYear) {
+		super();
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.edition = edition;
+		this.publicshedYear = publicshedYear;
+	}
+	
+	
+}

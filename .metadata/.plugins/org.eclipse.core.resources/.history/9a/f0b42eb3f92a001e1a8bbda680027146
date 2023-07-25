@@ -1,0 +1,130 @@
+package com.giaolang.bookstore.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.giaolang.bookstore.util.DBUtil;
+
+public class BookDAO implements DAOInterface<User>{
+	public static UserDAO getInstance() {
+		return new UserDAO();
+	}
+
+	@Override
+	public int insert(User t) {
+		int result = 0;
+		try {
+			Connection c = JDBCUtil.getConnection();
+			String sql = "INSERT INTO User (username, password, hoVaTen)"
+					+ "VALUES (?,?,?)";
+			PreparedStatement statement = c.prepareStatement(sql);
+			statement.setString(1, t.getUsername());
+			statement.setString(2, t.getPassword());
+			statement.setString(3, t.getHoVaTen());
+			
+			result = statement.executeUpdate();
+			System.out.println("sql: " + sql);
+			System.out.println("so dong thay doi: " + result);
+			JDBCUtil.closeConnection(c);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int update(User t) {
+		int result = 0;
+		try {
+			Connection c = JDBCUtil.getConnection();
+			String sql = "UPDATE `User` "
+					+ "SET "
+					+ "`password`=?,"
+					+ "`hoVaTen`=?"
+					+ " WHERE `username` = ?";
+			PreparedStatement statement = c.prepareStatement(sql);
+			statement.setString(1, t.getPassword());
+			statement.setString(2, t.getHoVaTen());
+			statement.setString(3, t.getUsername());
+			
+			
+			result = statement.executeUpdate();
+			System.out.println("sql: " + sql);
+			System.out.println("so dong thay doi: " + result);
+			JDBCUtil.closeConnection(c);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public int delete(User t) {
+		int result = 0;
+		try {
+			Connection c = JDBCUtil.getConnection();
+			String sql = "DELETE FROM `User` "
+					+ "WHERE `username` = ?";
+			PreparedStatement statement = c.prepareStatement(sql);
+			statement.setString(1, t.getUsername());
+			result = statement.executeUpdate();
+			System.out.println("sql: " + sql);
+			System.out.println("so dong thay doi: " + result);
+			JDBCUtil.closeConnection(c);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public ArrayList<User> selectAll() {
+		ArrayList<User> result = new ArrayList<>();
+		try {
+			Connection c = JDBCUtil.getConnection();
+			String sql = "SELECT *FROM User";
+			PreparedStatement statement = c.prepareStatement(sql);
+			
+			System.out.println("sql: " + sql);
+			ResultSet rs = statement.executeQuery(); //tra ve mot set tuong tu nhu bang
+			
+			//duyet qua set
+			while(rs.next()) {
+				String username = rs.getString("username");
+				String password = rs.getString("password");
+				String hoVaTen = rs.getString("hoVaTen");
+				
+				User User = new User(username, password, hoVaTen);
+				result.add(User);
+			}
+			
+			JDBCUtil.closeConnection(c);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	@Override
+	public User selectById(User t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<User> selectByCondition(String condition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

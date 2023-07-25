@@ -1,0 +1,6 @@
+package com.giaolang.bookstore.dto;
+
+public class Book {
+	private String isbnString;
+	
+}

@@ -1,0 +1,54 @@
+//main
+package com.giaolang.bookstore.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.DatabaseMetaData;
+import com.mysql.jdbc.Driver;
+
+public class DBUtil {
+	public static Connection getConnection() {
+		Connection c = null;
+		//can tao try catch de khi khong ket noi dc db thi con bao loi
+		try {
+			//dang ky mySql driver voi drivermanager
+			DriverManager.registerDriver(new Driver());
+			
+			//cac thong so
+			String url = "jdbc:mySQL://localhost:3306/bookstore";
+			String username = "root";
+			String password = "";
+			
+			//tao ket noi
+			c = DriverManager.getConnection(url, username, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return c;
+	}
+	
+	public static void printInfo(Connection c) {
+		try {
+			if(c != null) {
+				DatabaseMetaData dtmt = (DatabaseMetaData) c.getMetaData();
+				System.out.println(dtmt.getDatabaseProductName() + ": " + dtmt.getDatabaseMinorVersion());
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeConnection(Connection c) {
+		try {
+			if(c != null) {
+				c.close();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package com.giaolang.bookstore.resource.v3;
+
+import jakarta.ws.rs.Path;
+
+@Path("v3/books")
+public class BookResource {
+	private BookDAO boo
+}

@@ -1,0 +1,5 @@
+package resource.v3;
+
+public class BookResource {
+
+}

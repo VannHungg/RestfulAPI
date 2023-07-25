@@ -1,0 +1,5 @@
+package com.giaolang.bookstore.resource.v3;
+
+public class BookResource {
+
+}

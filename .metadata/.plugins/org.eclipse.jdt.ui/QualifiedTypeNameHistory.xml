@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.ApplicationPath"/>
+    <fullyQualifiedTypeName name="org.glassfish.jersey.server.ResourceConfig"/>
+    <fullyQualifiedTypeName name="com.giaolang.bookstore.config.BookApplication"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Path"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.giaolang.bookstore.resource.v2.BookResource"/>
+    <fullyQualifiedTypeName name="com.giaolang.bookstore.dto.Book"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.GET"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.Produces"/>
+    <fullyQualifiedTypeName name="jakarta.ws.rs.core.MediaType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

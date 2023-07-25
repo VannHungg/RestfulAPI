@@ -1,0 +1,5 @@
+INDEX VERSION 1.132
+D:\Workspace\Web\restful_api\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\577131494.index
+\lastdemorest\src\main\java
+D:\Workspace\Web\restful_api\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1898556852.index
+\bookstore\src\main\java

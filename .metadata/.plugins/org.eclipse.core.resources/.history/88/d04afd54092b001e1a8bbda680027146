@@ -1,0 +1,28 @@
+package com.giaolang.bookstore.resource.v3;
+
+import java.util.List;
+
+import com.giaolang.bookstore.dao.BookDAO;
+import com.giaolang.bookstore.dto.Book;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+
+@Path("v3/books")
+public class BookResource {
+	private BookDAO dao = BookDAO.getInstance();
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Book> getAll() {
+		return dao.getAll();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Book getAll() {
+		return dao.getAll();
+	}
+}

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+D:\Workspace\Web\restful_api\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1209698976.index
+1088318244.index
+1845543916.index
+319647610.index
+491026810.index
+3595394241.index
+2135557076.index

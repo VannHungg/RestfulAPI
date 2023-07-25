@@ -1,0 +1,14 @@
+package com.giaolang.bookstore.resource.v1;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+
+@Path("v1/books")
+public class BookResource {
+	@GET
+	@Produces
+	public String sayHello() {
+		return "One small meassage return from api!!";
+	}
+}

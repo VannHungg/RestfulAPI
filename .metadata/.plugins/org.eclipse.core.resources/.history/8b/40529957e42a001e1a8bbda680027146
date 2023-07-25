@@ -1,0 +1,10 @@
+package model;
+
+public class Snippet {
+	public static void main(String[] args) {
+		else {
+					System.out.println("create session factory fail.");
+				}
+	}
+}
+

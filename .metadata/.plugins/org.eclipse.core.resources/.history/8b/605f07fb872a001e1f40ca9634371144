@@ -1,0 +1,8 @@
+package com.giaolang.bookstore.config;
+
+import jakarta.ws.rs.ApplicationPath;
+
+@ApplicationPath("api")
+public class BookApplication extends ResourceCon{
+	
+}
